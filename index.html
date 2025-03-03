@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To My Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation: heartbeat 1s infinite;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            background: #ff0000;
+            width: 52px;
+            height: 80px;
+            border-radius: 50px 50px 0 0;
+        }
+        
+        .heart:before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .text {
+            color: #fff;
+            font-size: 24px;
+            margin-top: 30px;
+            text-align: center;
+            animation: fadeIn 3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff4081;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ff1744;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="text">
+        <p>亲爱的，遇见你是我最大的幸福</p>
+        <p>我喜欢你，想和你一起走过余生的每一天</p>
+        <p>你愿意做我的女朋友吗？</p>
+    </div>
+    <button class="btn" onclick="showLove()">点击这里</button>
+    
+    <script>
+        function showLove() {
+            alert('❤️ 我爱你 ❤️');
+            document.body.style.background = '#ff69b4';
+            setTimeout(() => {
+                document.body.style.background = '#000';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
